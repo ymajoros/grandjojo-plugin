@@ -1,5 +1,6 @@
-package hudson.plugins.chucknorris;
+package hudson.plugins.grandjojo;
 
+import hudson.plugins.grandjojo.Style;
 import hudson.model.Result;
 import junit.framework.TestCase;
 

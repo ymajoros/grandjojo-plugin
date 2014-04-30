@@ -1,5 +1,9 @@
-package hudson.plugins.chucknorris;
+package hudson.plugins.grandjojo;
 
+import hudson.plugins.grandjojo.Style;
+import hudson.plugins.grandjojo.FactGenerator;
+import hudson.plugins.grandjojo.FricandelAction;
+import hudson.plugins.grandjojo.JulesVanobbergenRecorder;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 import hudson.Launcher;
@@ -15,15 +19,15 @@ import java.util.List;
 
 import junit.framework.TestCase;
 
-public class CordellWalkerRecorderTest extends TestCase {
+public class JulesVanobbergenRecorderTest extends TestCase {
 
 	private FactGenerator mockGenerator;
-	private CordellWalkerRecorder recorder;
+	private JulesVanobbergenRecorder recorder;
 
 	@Override
 	public void setUp() {
 		mockGenerator = mock(FactGenerator.class);
-		recorder = new CordellWalkerRecorder(mockGenerator);
+		recorder = new JulesVanobbergenRecorder(mockGenerator);
 	}
 
 	public void testGetProjectActionWithNoLastBuildGivesNullAction() {
@@ -32,23 +36,23 @@ public class CordellWalkerRecorderTest extends TestCase {
 		assertNull(recorder.getProjectAction(mockProject));
 	}
 
-	public void testGetProjectActionHavingLastBuildGivesRoundhouseAction() {
+	public void testGetProjectActionHavingLastBuildGivesFricandelAction() {
 		AbstractProject mockProject = mock(AbstractProject.class);
 		Build mockBuild = mock(Build.class);
 
 		when(mockProject.getLastBuild()).thenReturn(mockBuild);
 		when(mockBuild.getResult()).thenReturn(Result.SUCCESS);
 		when(mockGenerator.random()).thenReturn(
-				"Chuck Norris burst the dot com bubble.");
+				"Il y a environ 800 sortes de bières brassées en Belgique.");
 
 		Action action = recorder.getProjectAction(mockProject);
 
-		assertTrue(action instanceof RoundhouseAction);
-		assertEquals(Style.THUMB_UP, ((RoundhouseAction) action).getStyle());
-		assertNotNull(((RoundhouseAction) action).getFact());
+		assertTrue(action instanceof FricandelAction);
+		assertEquals(Style.THUMB_UP, ((FricandelAction) action).getStyle());
+		assertNotNull(((FricandelAction) action).getFact());
 	}
 
-	public void testPerformWithFailureResultAddsRoundHouseActionWithBadAssStyleAndExpectedFact()
+	public void testPerformWithFailureResultAddsFricandelActionWithBadAssStyleAndExpectedFact()
 			throws Exception {
 		List<Action> actions = new ArrayList<Action>();
 		AbstractBuild mockBuild = mock(AbstractBuild.class);
@@ -56,7 +60,7 @@ public class CordellWalkerRecorderTest extends TestCase {
 		when(mockBuild.getActions()).thenReturn(actions);
 
 		when(mockGenerator.random()).thenReturn(
-				"Chuck Norris burst the dot com bubble.");
+				"Il y a environ 800 sortes de bières brassées en Belgique.");
 
 		assertEquals(0, actions.size());
 
@@ -64,10 +68,10 @@ public class CordellWalkerRecorderTest extends TestCase {
 				mock(BuildListener.class));
 
 		assertEquals(1, actions.size());
-		assertTrue(actions.get(0) instanceof RoundhouseAction);
-		assertEquals(Style.BAD_ASS, ((RoundhouseAction) actions.get(0))
+		assertTrue(actions.get(0) instanceof FricandelAction);
+		assertEquals(Style.BAD_ASS, ((FricandelAction) actions.get(0))
 				.getStyle());
-		assertEquals("Chuck Norris burst the dot com bubble.",
-				((RoundhouseAction) actions.get(0)).getFact());
+		assertEquals("Il y a environ 800 sortes de bières brassées en Belgique.",
+				((FricandelAction) actions.get(0)).getFact());
 	}
 }

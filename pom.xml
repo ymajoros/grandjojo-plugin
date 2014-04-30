@@ -7,11 +7,11 @@
     </parent>
 
     <groupId>org.jvnet.hudson.plugins</groupId>
-    <artifactId>chucknorris</artifactId>
-    <version>0.6-SNAPSHOT</version>
-    <name>ChuckNorris Plugin</name>
-    <description>Displays a picture of Chuck Norris (instead of Jenkins the butler) and a random Chuck Norris 'The Programmer' fact on each build page.</description>
-    <url>http://wiki.jenkins-ci.org/display/JENKINS/ChuckNorris+Plugin</url>
+    <artifactId>grandjojo</artifactId>
+    <version>0.7-SNAPSHOT</version>
+    <name>GrandJojo Plugin</name>
+    <description>Displays a picture of Grand Jojo (instead of Jenkins the butler) and a random fact about Belgium on each build page.</description>
+    <url>http://wiki.jenkins-ci.org/display/JENKINS/GrandJojo+Plugin</url>
     <packaging>hpi</packaging>
 
     <developers>
@@ -126,9 +126,9 @@
     </reporting>
     
     <scm>
-        <connection>scm:git:git://github.com/jenkinsci/chucknorris-plugin.git</connection>
-        <developerConnection>scm:git:git@github.com:jenkinsci/chucknorris-plugin.git</developerConnection>
-        <url>https://github.com/jenkinsci/chucknorris-plugin</url>
+        <connection>scm:git:git://github.com/jenkinsci/grandjojo-plugin.git</connection>
+        <developerConnection>scm:git:git@github.com:jenkinsci/grandjojo-plugin.git</developerConnection>
+        <url>https://github.com/jenkinsci/grandjojo-plugin</url>
     </scm>
 
     <pluginRepositories>

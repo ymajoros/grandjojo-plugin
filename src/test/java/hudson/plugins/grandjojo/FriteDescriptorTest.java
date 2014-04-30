@@ -1,19 +1,20 @@
-package hudson.plugins.chucknorris;
+package hudson.plugins.grandjojo;
 
+import hudson.plugins.grandjojo.FriteDescriptor;
 import static org.mockito.Mockito.mock;
 import hudson.model.AbstractProject;
 import junit.framework.TestCase;
 
-public class BeardDescriptorTest extends TestCase {
+public class FriteDescriptorTest extends TestCase {
 
-	private BeardDescriptor descriptor;
+	private FriteDescriptor descriptor;
 
 	public void setUp() {
-		descriptor = new BeardDescriptor();
+		descriptor = new FriteDescriptor();
 	}
 
 	public void testGetDisplayName() {
-		assertEquals("Activate Chuck Norris", descriptor.getDisplayName());
+		assertEquals("Activate Grand Jojo", descriptor.getDisplayName());
 	}
 
 	public void testIsApplicableGivesTrue() {

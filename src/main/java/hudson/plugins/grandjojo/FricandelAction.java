@@ -19,18 +19,18 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package hudson.plugins.chucknorris;
+package hudson.plugins.grandjojo;
 
 import hudson.model.Action;
 
 /**
- * {@link RoundhouseAction} keeps the style and fact associated with the action.
+ * {@link FricandelAction} keeps the style and fact associated with the action.
  * For more info, please watch <a
  * href="http://www.youtube.com/watch?v=Vb7lnpk3tRY"
  * >http://www.youtube.com/watch?v=Vb7lnpk3tRY</a>
  * @author cliffano
  */
-public final class RoundhouseAction implements Action {
+public final class FricandelAction implements Action {
 
     /**
      * The style - for backward compatibility to version 0.2.
@@ -53,13 +53,13 @@ public final class RoundhouseAction implements Action {
     private String mFact;
 
     /**
-     * Constructs a RoundhouseAction with specified style and fact.
+     * Constructs a FricandelAction with specified style and fact.
      * @param style
      *            the style
      * @param fact
      *            the fact
      */
-    public RoundhouseAction(final Style style, final String fact) {
+    public FricandelAction(final Style style, final String fact) {
         super();
         this.mStyle = style;
         this.mFact = fact;
@@ -70,7 +70,7 @@ public final class RoundhouseAction implements Action {
      * @return the display name
      */
     public String getDisplayName() {
-        return "Chuck Norris";
+        return "Grand Jojo";
     }
 
     /**
@@ -86,11 +86,11 @@ public final class RoundhouseAction implements Action {
      * @return the URL name
      */
     public String getUrlName() {
-        return "chucknorris";
+        return "grandjojo";
     }
 
     /**
-     * Gets the Chuck Norris style.
+     * Gets the Grand Jojo style.
      * @return the style
      */
     public Style getStyle() {
@@ -104,7 +104,7 @@ public final class RoundhouseAction implements Action {
     }
 
     /**
-     * Gets the Chuck Norris fact.
+     * Gets the Grand Jojo fact.
      * @return the fact
      */
     public String getFact() {

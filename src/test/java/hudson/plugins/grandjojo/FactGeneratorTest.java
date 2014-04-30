@@ -1,4 +1,4 @@
-package hudson.plugins.chucknorris;
+package hudson.plugins.grandjojo;
 
 import junit.framework.TestCase;
 
@@ -6,6 +6,7 @@ public class FactGeneratorTest extends TestCase {
 
 	private FactGenerator generator;
 
+        @Override
 	public void setUp() {
 		generator = new FactGenerator();
 	}

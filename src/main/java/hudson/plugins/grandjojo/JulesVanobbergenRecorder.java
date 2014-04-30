@@ -19,7 +19,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package hudson.plugins.chucknorris;
+package hudson.plugins.grandjojo;
 
 import hudson.Launcher;
 import hudson.model.AbstractBuild;
@@ -35,19 +35,19 @@ import java.util.logging.Logger;
 import org.kohsuke.stapler.DataBoundConstructor;
 
 /**
- * This class associates a RoundhouseAction to a job or a build. For more info
+ * This class associates a FricandelAction to a job or a build. For more info
  * on Cordell Walker, check out <a
  * href="http://www.imdb.com/character/ch0038386/"
  * >http://www.imdb.com/character/ch0038386/</a>.
  * @author cliffano
  */
-public class CordellWalkerRecorder extends Recorder {
+public class JulesVanobbergenRecorder extends Recorder {
 
     /**
      * Logger.
      */
     private static final Logger LOGGER = Logger
-            .getLogger(CordellWalkerRecorder.class.getName());
+            .getLogger(JulesVanobbergenRecorder.class.getName());
 
     /**
      * Fact generator.
@@ -59,7 +59,7 @@ public class CordellWalkerRecorder extends Recorder {
      * {@link FactGenerator}.
      */
     @DataBoundConstructor
-    public CordellWalkerRecorder() {
+    public JulesVanobbergenRecorder() {
         this(new FactGenerator());
     }
 
@@ -69,13 +69,13 @@ public class CordellWalkerRecorder extends Recorder {
      * @param factGenerator
      *            the fact generator
      */
-    public CordellWalkerRecorder(final FactGenerator factGenerator) {
+    public JulesVanobbergenRecorder(final FactGenerator factGenerator) {
         this.factGenerator = factGenerator;
-        LOGGER.info("Chuck Norris is activated");
+        LOGGER.info("Grand Jojo is activated");
     }
 
     /**
-     * Gets the RoundhouseAction as the project action. This is applicable for
+     * Gets the FricandelAction as the project action. This is applicable for
      * each job and only when there's at least one build in the job.
      * @param project
      *            the project
@@ -87,13 +87,13 @@ public class CordellWalkerRecorder extends Recorder {
         if (project.getLastBuild() != null) {
             Style style = Style.get(project.getLastBuild().getResult());
             String fact = factGenerator.random();
-            action = new RoundhouseAction(style, fact);
+            action = new FricandelAction(style, fact);
         }
         return action;
     }
 
     /**
-     * Adds RoundhouseAction to the build actions. This is applicable for each
+     * Adds FricandelAction to the build actions. This is applicable for each
      * build.
      * @param build
      *            the build
@@ -113,7 +113,7 @@ public class CordellWalkerRecorder extends Recorder {
             throws InterruptedException, IOException {
         Style style = Style.get(build.getResult());
         String fact = factGenerator.random();
-        build.getActions().add(new RoundhouseAction(style, fact));
+        build.getActions().add(new FricandelAction(style, fact));
         return true;
     }
 

@@ -19,26 +19,26 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package hudson.plugins.chucknorris;
+package hudson.plugins.grandjojo;
 
 import hudson.model.Result;
 
 /**
- * This class provides various Chuck Norris' styles.
+ * This class provides various Grand Jojo' styles.
  * @author cliffano
  */
 public enum Style {
 
     /**
-     * A happy Chuck Norris showing a thumb up.
+     * A happy Grand Jojo showing a thumb up.
      */
     THUMB_UP,
     /**
-     * An alert Chuck Norris with a martial arts stance.
+     * An alert Grand Jojo with a martial arts stance.
      */
     ALERT,
     /**
-     * A total bad ass Chuck Norris ready to give you a good ass whoopin'.
+     * A total bad ass Grand Jojo ready to give you a good ass whoopin'.
      */
     BAD_ASS;
 
